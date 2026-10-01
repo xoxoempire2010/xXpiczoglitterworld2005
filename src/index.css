@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Vintage 2005 Font Families */
+  .font-comic {
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+  }
+  .font-pixel {
+    font-family: 'Pixelify Sans', 'VT323', monospace;
+  }
+  .font-counter {
+    font-family: 'VT323', monospace;
+  }
+  .font-hand {
+    font-family: 'Caveat', cursive;
+  }
+}
+
+/* Glitter Background Patterns */
+.bg-glitter-pink {
+  background-color: #ff3399;
+  background-image: 
+    radial-gradient(#ffffff 15%, transparent 16%),
+    radial-gradient(#ff99cc 15%, transparent 16%),
+    radial-gradient(#ffffff 10%, transparent 11%),
+    radial-gradient(#ff007f 20%, transparent 21%),
+    linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #ff007f 100%);
+  background-size: 60px 60px, 45px 45px, 30px 30px, 50px 50px, 100% 100%;
+  background-position: 0 0, 20px 20px, 10px 10px, 30px 30px, 0 0;
+}
+
+.bg-glitter-blue {
+  background-color: #00c8ff;
+  background-image: 
+    radial-gradient(#ffffff 15%, transparent 16%),
+    radial-gradient(#a0e8ff 15%, transparent 16%),
+    radial-gradient(#ffffff 10%, transparent 11%),
+    radial-gradient(#00a2e8 20%, transparent 21%),
+    linear-gradient(135deg, #00b4d8 0%, #90e0ef 50%, #0077b6 100%);
+  background-size: 60px 60px, 45px 45px, 30px 30px, 50px 50px, 100% 100%;
+  background-position: 0 0, 20px 20px, 10px 10px, 30px 30px, 0 0;
+}
+
+.bg-piczo-checker {
+  background-image: linear-gradient(45deg, rgba(255, 105, 180, 0.2) 25%, transparent 25%), 
+                    linear-gradient(-45deg, rgba(255, 105, 180, 0.2) 25%, transparent 25%), 
+                    linear-gradient(45deg, transparent 75%, rgba(255, 105, 180, 0.2) 75%), 
+                    linear-gradient(-45deg, transparent 75%, rgba(255, 105, 180, 0.2) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Scalloped Sugar Paper Border for Classroom Display */
+.scalloped-border-orange {
+  border: 8px dashed #ff6b35;
+  outline: 4px solid #f7c59f;
+}
+
+.scalloped-border-blue {
+  border: 8px dashed #00b4d8;
+  outline: 4px solid #caf0f8;
+}
+
+/* Blingee Sparkle Animation */
+@keyframes glitterShimmer {
+  0% {
+    filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 5px #ff1493) brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px #00ffff) brightness(1.3);
+    transform: scale(1.02);
+  }
+  100% {
+    filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 5px #ff1493) brightness(1);
+    transform: scale(1);
+  }
+}
+
+.animate-glitter {
+  animation: glitterShimmer 2s ease-in-out infinite;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.6) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+}
+
+.animate-sparkle-fast {
+  animation: sparkleTwinkle 1.2s ease-in-out infinite;
+}
+
+.animate-sparkle-slow {
+  animation: sparkleTwinkle 2.4s ease-in-out infinite;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee-infinite {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marqueeScroll 22s linear infinite;
+}
+
+/* Nudge Screen Shake for MSN Messenger */
+@keyframes msnNudge {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-8px, 6px) rotate(-1deg); }
+  40% { transform: translate(8px, -6px) rotate(1deg); }
+  60% { transform: translate(-6px, -4px) rotate(-1deg); }
+  80% { transform: translate(6px, 4px) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.animate-nudge {
+  animation: msnNudge 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* 2005 Windows XP / Bevel Styling */
+.bevel-button {
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #666666;
+  border-bottom: 2px solid #666666;
+  box-shadow: inset 1px 1px 0px #eee, inset -1px -1px 0px #888;
+}
+
+.bevel-button:active {
+  border-top: 2px solid #666666;
+  border-left: 2px solid #666666;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 0px #888, inset -1px -1px 0px #eee;
+}
+
+.bevel-inset {
+  border-top: 2px solid #666666;
+  border-left: 2px solid #666666;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.4);
+}
